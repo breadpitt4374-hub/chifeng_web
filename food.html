@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食指南 - 赤峰印象 | Food Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .food-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .food-item { display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding: 20px 0; }
+        .food-item img { width: 120px; height: 120px; border-radius: 15px; object-fit: cover; margin-right: 25px; }
+        .food-tag { font-size: 11px; background: var(--light-gray); color: var(--gold); padding: 3px 10px; border-radius: 5px; font-weight: bold; margin-bottom: 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">赤峰印象</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="attractions.html">景点介绍</a>
+            <a href="food.html" class="active">美食指南</a>
+            <a href="history.html">文化历史</a>
+            <a href="transport.html">交通住宿</a>
+            <a href="strategy.html">旅游攻略</a>
+        </div>
+    </nav>
+
+    <header class="hero-header" style="background-image: url('https://images.unsplash.com/photo-1544376798-89aa6b82c6cd');">
+        <h1>美食指南</h1>
+        <p>舌尖上的蒙汉融合 · 塞外韵味</p>
+    </header>
+
+    <main class="container">
+        <div class="food-list">
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="对夹">
+                <div>
+                   <span class="food-tag">非遗小吃</span>
+                   <h3 style="margin:5px 0;">赤峰对夹</h3>
+                   <p style="font-size: 14px; color: var(--gray); margin: 0;">咸香酥脆，蒙版“肉夹馍”。</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="羊肉">
+                <div>
+                   <span class="food-tag">草原纯味</span>
+                   <h3 style="margin:5px 0;">手把羊肉</h3>
+                   <p style="font-size: 14px; color: var(--gray); margin: 0;">原汁原味，鲜美而不膻。</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1544025162-9bd7679ac80d" alt="奶茶">
+                <div>
+                   <span class="food-tag">特色饮品</span>
+                   <h3 style="margin:5px 0;">蒙古奶茶</h3>
+                   <p style="font-size: 14px; color: var(--gray); margin: 0;">咸香浓郁，草原早餐的灵魂。</p>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288" alt="鱼">
+                <div>
+                   <span class="food-tag">高原之鲜</span>
+                   <h3 style="margin:5px 0;">达里湖华子鱼</h3>
+                   <p style="font-size: 14px; color: var(--gray); margin: 0;">鲜嫩细腻，肉质紧实。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 复用首页页脚 -->
+</body>
+</html>
