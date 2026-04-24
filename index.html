@@ -24,20 +24,154 @@
         <p>山海之外的塞外明珠 · 中华文明的曙光</p>
     </header>
 
-    <main class="container">
-        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-            <div style="position: relative;">
-                <img src="./images/im_gx.jpg" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--light-gray);">
-                <div style="position: absolute; top: -20px; left: -20px; background: var(--red); color: white; padding: 15px 30px; border-radius: 50px; font-weight: bold; font-size: 14px;">文明起源</div>
+   <main class="container">
+
+    <section class="history-intro">
+
+        <!-- 图片区域 -->
+        <div class="history-image-box">
+            <img src="./images/im_gx.jpg" class="history-image">
+
+            <div class="history-tag">
+                文明起源
             </div>
-            <div>
-                <h2 style="font-size: 40px; color: var(--red); margin-bottom: 25px; font-style: italic;">红山文化 · 龙的故乡</h2>
-                <p style="font-size: 17px; color: var(--gray); margin-bottom: 25px;">赤峰市位于内蒙古自治区东南部，地处蒙、冀、辽交界，是连接东北与华北的重要节点城市，全市面积约9万平方公里，人口400多万，是内蒙古重要的人口与区域中心城市之一。赤峰自然资源丰富，草原、山地与沙地交错分布，拥有阿斯哈图石林和乌兰布统草原等著名景区。赤峰还是红山文化的重要发源地，出土“中华第一龙”等重要文物，历史文化底蕴深厚。同时，这里是多民族聚居地区，以蒙古族文化为代表，融合草原游牧文化与中原文化，具有独特的地域特色与民族风情，是一座集自然风光与人文历史于一体的塞外城市。
-</p>
-                <a href="history.html" style="border: 2px solid var(--red); color: var(--red); padding: 12px 35px; border-radius: 50px; font-weight: bold; font-size: 14px; display: inline-block;">探索文明深度</a>
-            </div>
-        </section>
-    </main>
+        </div>
+
+        <!-- 文字区域 -->
+        <div class="history-content">
+
+            <h2 class="history-title">
+                红山文化 · 龙的故乡
+            </h2>
+
+            <p class="history-text">
+                赤峰市位于内蒙古自治区东南部，地处蒙、冀、辽交界，是连接东北与华北的重要节点城市，全市面积约9万平方公里，人口400多万，是内蒙古重要的人口与区域中心城市之一。
+
+                赤峰自然资源丰富，草原、山地与沙地交错分布，拥有阿斯哈图石林和乌兰布统草原等著名景区。赤峰还是红山文化的重要发源地，出土“中华第一龙”等重要文物，历史文化底蕴深厚。
+
+                同时，这里是多民族聚居地区，以蒙古族文化为代表，融合草原游牧文化与中原文化，具有独特的地域特色与民族风情，是一座集自然风光与人文历史于一体的塞外城市。
+            </p>
+
+            <a href="history.html" class="history-btn">
+                探索文明深度
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<style>
+/* 主体布局 */
+.history-intro{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+/* 图片区域 */
+.history-image-box{
+    position:relative;
+}
+
+.history-image{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    box-shadow:20px 20px 0 var(--light-gray);
+}
+
+/* 左上角标签 */
+.history-tag{
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    background:var(--red);
+    color:white;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* 标题 */
+.history-title{
+    font-size:40px;
+    color:var(--red);
+    margin-bottom:25px;
+    font-style:italic;
+    line-height:1.4;
+}
+
+/* 正文 */
+.history-text{
+    font-size:17px;
+    color:var(--gray);
+    margin-bottom:30px;
+    line-height:2;
+}
+
+/* 按钮 */
+.history-btn{
+    border:2px solid var(--red);
+    color:var(--red);
+    padding:12px 35px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:14px;
+    display:inline-block;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.history-btn:hover{
+    background:var(--red);
+    color:white;
+}
+
+/* ========================= */
+/* 手机端适配（重点） */
+/* ========================= */
+@media (max-width: 768px){
+
+    .history-intro{
+        grid-template-columns: 1fr;
+        gap:40px;
+    }
+
+    .history-title{
+        font-size:30px;
+        margin-bottom:20px;
+    }
+
+    .history-text{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .history-tag{
+        top:15px;
+        left:15px;
+        padding:10px 20px;
+        font-size:12px;
+        border-radius:30px;
+    }
+
+    .history-image{
+        box-shadow:none;
+        border-radius:18px;
+    }
+
+    .history-btn{
+        width:100%;
+        text-align:center;
+        padding:14px 0;
+    }
+}
+</style>
 
     <footer>
         <div class="footer-grid">

@@ -192,21 +192,134 @@
 }
 </style>
 
-        <h2 style="font-size:32px; border-left: 6px solid var(--red); padding-left: 20px; margin: 80px 0 40px;">品质下榻</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-            <div style="position:relative; border-radius: 20px; overflow:hidden; height: 300px;">
-                <img src="./images/im_ht.jpg" style="width:100%; height:100%; object-fit:cover;">
-                <div style="position:absolute; inset:0; background:rgba(0,0,0,0.3); display:flex; align-items:flex-end; padding:40px; color:white;">
-                    <div><h3>市区星级酒店</h3><p>奢华舒适，市中心首选。</p></div>
-                </div>
-            </div>
-            <div style="position:relative; border-radius: 20px; overflow:hidden; height: 300px;">
-                <img src="./images/im_ms.jpg" style="width:100%; height:100%; object-fit:cover;">
-                <div style="position:absolute; inset:0; background:rgba(0,0,0,0.3); display:flex; align-items:flex-end; padding:40px; color:white;">
-                    <div><h3>草原特色包/民宿</h3><p>枕着星空入眠，深度草原体验。</p></div>
-                </div>
+<h2 class="stay-title">
+    品质下榻
+</h2>
+
+<div class="stay-grid">
+
+    <!-- 酒店卡片 1 -->
+    <div class="stay-card">
+        <img src="./images/im_ht.jpg" class="stay-image">
+
+        <div class="stay-overlay">
+            <div>
+                <h3>市区星级酒店</h3>
+                <p>奢华舒适，市中心首选。</p>
             </div>
         </div>
+    </div>
+
+    <!-- 酒店卡片 2 -->
+    <div class="stay-card">
+        <img src="./images/im_ms.jpg" class="stay-image">
+
+        <div class="stay-overlay">
+            <div>
+                <h3>草原特色包/民宿</h3>
+                <p>枕着星空入眠，深度草原体验。</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+
+/* 标题 */
+.stay-title{
+    font-size:32px;
+    border-left:6px solid var(--red);
+    padding-left:20px;
+    margin:80px 0 40px;
+    letter-spacing:2px;
+}
+
+/* 两列布局 */
+.stay-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* 卡片主体 */
+.stay-card{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    height:300px;
+}
+
+/* 图片 */
+.stay-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* 遮罩层 */
+.stay-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    display:flex;
+    align-items:flex-end;
+    padding:40px;
+    color:white;
+}
+
+/* 标题 */
+.stay-overlay h3{
+    font-size:24px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+/* 描述 */
+.stay-overlay p{
+    font-size:15px;
+    line-height:1.8;
+    opacity:0.95;
+}
+
+/* ======================= */
+/* 手机端适配 */
+/* ======================= */
+@media (max-width:768px){
+
+    .stay-title{
+        font-size:28px;
+        margin:60px 0 30px;
+        padding-left:16px;
+    }
+
+    .stay-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .stay-card{
+        height:240px;
+        border-radius:18px;
+    }
+
+    .stay-overlay{
+        padding:24px;
+    }
+
+    .stay-overlay h3{
+        font-size:20px;
+        margin-bottom:8px;
+    }
+
+    .stay-overlay p{
+        font-size:14px;
+        line-height:1.7;
+    }
+}
+
+</style>
     </main>
     <!-- 复用首页页脚 -->
    <footer>

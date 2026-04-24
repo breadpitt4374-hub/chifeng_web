@@ -66,8 +66,150 @@ footer { background: #111; color: #555; padding: 80px 8% 40px; margin-top: 100px
 .copyright { text-align: center; border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; }
 
 /* 移动端 */
-@media (max-width: 900px) {
-    .bento-grid, .footer-grid { grid-template-columns: 1fr; }
-    .hero-header h1 { font-size: 40px; }
-    .col-2, .row-2 { grid-column: auto; grid-row: auto; }
+
+/* =========================
+   🎬 作品级移动端 UI系统
+   ========================= */
+
+@media (max-width:768px){
+
+    /* ===== 全局基础 ===== */
+    body{
+        background:#fafafa;
+    }
+
+    .container{
+        padding:0 14px;
+    }
+
+    /* =========================
+       🧭 顶部导航（APP化）
+       ========================= */
+    nav{
+        position:sticky;
+        top:0;
+        z-index:999;
+        background:rgba(255,255,255,0.92);
+        backdrop-filter: blur(10px);
+        padding:12px 14px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .logo{
+        font-size:20px;
+        letter-spacing:1px;
+    }
+
+    .nav-links{
+        width:100%;
+        display:flex;
+        overflow-x:auto;
+        gap:10px;
+        padding-bottom:4px;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .nav-links a{
+        flex:0 0 auto;
+        font-size:13px;
+        padding:6px 14px;
+        background:#f3f3f3;
+        border-radius:999px;
+        white-space:nowrap;
+    }
+
+    .nav-links a.active{
+        background:rgba(180,30,30,0.12);
+        color:var(--red);
+    }
+
+    /* =========================
+       🎥 Hero（电影开场感）
+       ========================= */
+    .hero-header h1{
+        font-size:34px !important;
+        letter-spacing:2px;
+    }
+
+    .hero-header p{
+        font-size:14px !important;
+        opacity:0.9;
+        padding:0 10px;
+    }
+
+    /* =========================
+       🧱 通用标题
+       ========================= */
+    h1,h2{
+        letter-spacing:1px;
+    }
+
+    h2{
+        font-size:22px !important;
+        margin:40px 0 20px !important;
+    }
+
+    /* =========================
+       📱 卡片系统（核心升级）
+       ========================= */
+
+    .food-list,
+    .stay-grid,
+    .history-intro{
+        grid-template-columns:1fr !important;
+        gap:16px !important;
+    }
+
+    /* 卡片统一高级化 */
+    .food-item,
+    .stay-card,
+    .transport-card{
+        background:#fff;
+        border-radius:18px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.06);
+        padding:16px !important;
+        transition:0.3s;
+    }
+
+    /* 点击反馈（移动端体验关键） */
+    .food-item:active,
+    .stay-card:active,
+    .transport-card:active{
+        transform:scale(0.98);
+    }
+
+    /* 图片系统 */
+    .food-item img,
+    .stay-card img{
+        width:100% !important;
+        height:180px !important;
+        border-radius:14px;
+        object-fit:cover;
+        margin-bottom:10px;
+    }
+
+    /* =========================
+       🧾 文本系统优化
+       ========================= */
+    p{
+        line-height:1.7;
+    }
+
+    /* =========================
+       🎯 按钮系统（更像APP）
+       ========================= */
+    a{
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .history-btn,
+    a[style*="border-radius: 50px"]{
+        width:100%;
+        display:block;
+        text-align:center;
+        padding:12px 0;
+    }
+
 }
