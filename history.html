@@ -26,30 +26,299 @@
         </div>
     </nav>
 
-    <header class="hero-header" style="background-image: url('https://images.unsplash.com/photo-1542640244-7e672d6cef21');">
-        <h1>文化历史</h1>
-        <p>八千年文明 · 契丹风云</p>
-    </header>
+  <header class="hero-header" style="
+    position:relative;
+    height:560px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+    background:url('./images/im_wh.jpg') center/cover no-repeat;
+">
 
-    <main class="container">
-        <div class="history-timeline">
-            <div class="timeline-item">
-                <span class="era">8000年前</span>
-                <h3>红山文化 · 龙的故乡</h3>
-                <p style="color:var(--gray);">在三星他拉出土的碧玉龙，被证实是中华民族龙图腾的最早实证。红山文化从此响彻寰宇。</p>
+    <!-- 冷史诗级遮罩（比原来更“纪录片”） -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.65) 0%,
+            rgba(0,0,0,0.35) 45%,
+            rgba(0,0,0,0.75) 100%
+        );
+        z-index:1;
+    "></div>
+
+    <!-- 轻雾+历史质感层 -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.04),
+            rgba(0,0,0,0.7) 70%
+        );
+        z-index:2;
+    "></div>
+
+    <!-- 内容层 -->
+    <div style="
+        position:relative;
+        z-index:3;
+        max-width:820px;
+        padding:0 20px;
+    ">
+
+        <div style="
+            font-size:12px;
+            letter-spacing:6px;
+            opacity:0.8;
+            margin-bottom:14px;
+            color:#d7d7d7;
+        ">
+            HISTORICAL DOCUMENTARY · INNER ASIA
+        </div>
+
+        <h1 style="
+            font-size:52px;
+            margin:0 0 12px;
+            font-weight:700;
+            letter-spacing:3px;
+        ">
+            文化历史
+        </h1>
+
+        <p style="
+            font-size:17px;
+            opacity:0.92;
+            letter-spacing:2px;
+            line-height:1.8;
+        ">
+            八千年文明沉积 · 契丹帝国兴衰 · 草原与中原的长期交汇
+        </p>
+
+        <!-- 更“纪录片字幕感”的分隔线 -->
+        <div style="
+            width:160px;
+            height:2px;
+            background:linear-gradient(to right, transparent, rgba(255,255,255,0.7), transparent);
+            margin:26px auto 0;
+        "></div>
+
+    </div>
+
+</header>
+<main class="container" style="
+    background: radial-gradient(circle at top, #1a1d24 0%, #0b0d10 100%);
+    padding:90px 20px;
+    border-radius:30px;
+    overflow:hidden;
+">
+
+    <div class="history-timeline" style="position:relative; max-width:920px; margin:0 auto; padding-left:46px;">
+
+        <!-- 主时间线（带渐隐） -->
+        <div style="
+            position:absolute;
+            left:16px;
+            top:0;
+            bottom:0;
+            width:1px;
+            background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+        "></div>
+
+        <!-- ITEM 1 -->
+        <div style="position:relative; margin-bottom:70px;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#e0c28a;
+                box-shadow:0 0 18px rgba(224,194,138,0.35);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#e0c28a; opacity:0.9;">
+                EPISODE I · 8000 BCE
             </div>
-            <div class="timeline-item">
-                <span class="era">公元916年</span>
-                <h3>大辽故都 · 契丹风采</h3>
-                <p style="color:var(--gray);">这里曾是辽王朝的政治、文化中心。辽上京、辽中京都见证了契丹民族在北方的辉煌统治。</p>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                红山文化 · 龙图腾起源地
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                在距今约8000—5000年的新石器时代晚期，赤峰地区成为  
+                <span style="color:#e0c28a;">红山文化</span>的核心分布区之一。这里先后发展出兴隆洼文化、赵宝沟文化与红山文化体系，是中国北方史前文明的重要源头。
+
+在牛河梁、三星他拉等遗址中，发现了规模宏大的祭祀建筑群、墓葬群与玉礼器体系，说明当时社会已出现明显的等级分化与宗教信仰结构。
+
+其中最具代表性的“碧玉龙”出土于三星他拉遗址，被普遍认为是中华“龙图腾”最早的实物形态之一。它不仅是工艺品，更象征着早期中国人对自然、祖先与宇宙秩序的理解。
+
+这一时期的赤峰，已经不是简单的聚落，而是一个正在形成早期文明雏形的“精神中心”。
+            </p>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div style="position:relative; margin-bottom:70px;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#6bb6ff;
+                box-shadow:0 0 18px rgba(107,182,255,0.3);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#6bb6ff;">
+                EPISODE II · PRE-QIN ERA
             </div>
-            <div class="timeline-item">
-                <span class="era">明清时期</span>
-                <h3>蒙汉交融 · 丝路枢纽</h3>
-                <p style="color:var(--gray);">长城的重要门户，塞外商贸繁荣之地，蒙汉文化在此深度交织融合。</p>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                草原边界 · 中原与北方的交汇带
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                进入青铜时代至秦汉时期，赤峰地区处于中原王朝与北方草原民族的长期交界地带。
+
+这一带先后活跃着东胡、林胡、匈奴等游牧部族，同时也是燕国北部防线的重要延伸区域。随着秦汉统一进程推进，该地区逐步纳入北方边郡体系，成为“农耕文明与游牧文明直接接触的前沿地带”。
+
+军事戍边、移民屯田与草原游牧并存，使这里长期处于多种经济与文化模式的叠加状态。商贸、战争与迁徙共同塑造了这一地区“流动性极强”的历史特征。
+
+这一阶段的赤峰，不是中心，却是文明冲突与融合最频繁发生的地带之一。
+            </p>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div style="position:relative; margin-bottom:70px;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#ffb45e;
+                box-shadow:0 0 18px rgba(255,180,94,0.3);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#ffb45e;">
+                EPISODE III · LIAO DYNASTY
+            </div>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                契丹崛起 · 辽帝国的核心腹地
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                公元4世纪以后，契丹族逐渐崛起于东北草原，并在10世纪建立辽朝，开启北方草原帝国时代。
+
+赤峰所在区域成为辽帝国的重要统治与控制范围，处于辽上京、辽中京体系的辐射核心之内。辽代在此构建了复杂的政治结构，包括南北面官制度与双重行政体系，实现对游牧与农耕区域的同时治理。
+
+这一时期，草原地区不再是松散部落，而是纳入国家机器的完整政治单元。佛教在辽境内广泛传播，契丹文字与汉文化并行发展，形成高度多元的文化生态。
+
+赤峰在这一阶段，成为连接草原政治中心与边疆区域的重要枢纽。
+            </p>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div style="position:relative; margin-bottom:70px;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#5ee1a5;
+                box-shadow:0 0 18px rgba(94,225,165,0.25);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#5ee1a5;">
+                EPISODE IV · YUAN NETWORK
+            </div>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                帝国通道 · 欧亚草原的交通网络
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                元代统一蒙古高原后，草原地区进入更大尺度的帝国整合体系。
+
+赤峰所在区域成为连接元上都、漠北草原与中原地区的重要交通节点，大规模驿站体系在此建立，形成贯穿欧亚草原的“高速信息与军政网络”。
+
+军队调动、物资运输与商贸流通在草原上高效运行，使赤峰从区域性节点上升为帝国网络结构中的关键节点之一。
+
+这一时期的草原，不再只是边疆，而是帝国运行的“开放通道”。
+            </p>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div style="position:relative; margin-bottom:70px;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#c084fc;
+                box-shadow:0 0 18px rgba(192,132,252,0.25);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#c084fc;">
+                EPISODE V · FRONTIER ERA
+            </div>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                边疆秩序 · 长城体系与蒙汉融合
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                明代在北方修筑长城防线，将赤峰地区纳入重要军事防御体系之中，形成以防御、贸易与控制为核心的边疆结构。
+
+清代建立盟旗制度后，科尔沁等蒙古部落长期在此驻牧，草原社会结构逐渐稳定化。与此同时，茶马互市与边疆贸易高度活跃，中原商品、草原畜产与手工业品在此频繁交换。
+
+蒙汉文化在长期互动中不断融合，语言、宗教、婚俗与经济结构均呈现交叉特征。
+
+这一时期的赤峰，是一个高度融合但仍保持草原特性的边疆社会。
+            </p>
+        </div>
+
+        <!-- ITEM 6 -->
+        <div style="position:relative;">
+            <div style="
+                position:absolute; left:-30px; top:10px;
+                width:10px; height:10px; border-radius:50%;
+                background:#9aa4b2;
+                box-shadow:0 0 18px rgba(154,164,178,0.2);
+            "></div>
+
+            <div style="font-size:11px; letter-spacing:3px; color:#9aa4b2;">
+                EPISODE VI · PRESENT
+            </div>
+
+            <h2 style="margin:10px 0 14px; font-size:24px; color:#f5f5f5;">
+                当代赤峰 · 时间的叠影
+            </h2>
+
+            <p style="color:#b7b7b7; line-height:2.1; font-size:14px; margin:0;">
+                进入近现代以后，赤峰逐渐发展为内蒙古东部的重要区域性城市。
+
+工业发展、交通网络与城市扩张不断推进，但历史遗存仍然密集分布于区域之中。从红山文化遗址到辽代古迹，再到草原文化景观，形成“多层历史叠压”的独特城市结构。
+
+如今的赤峰，一方面是现代城市体系的一部分，另一方面仍保留着草原文明与史前文化的深层记忆，是历史与现实持续交汇的空间节点。
+            </p>
+        </div>
+
+    </div>
+</main>    <!-- 复用首页页脚 -->
+   <footer>
+        <div class="footer-grid">
+            <div>
+                <h4 style="font-size: 22px;">赤峰印象 · CHIFENG</h4>
+                <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。 今天的赤峰，既保留着史前遗迹与草原风貌，也呈现出现代城市的发展脉络，是自然、历史与人文共同构成的复合空间。 诚邀您走进这片土地，在风与草之间，感受时间留下的回声，共赴一场跨越千年的草原之约。</p>
+            </div>
+            <div>
+                <h4>快速导航</h4>
+                <p><a href="attractions.html">必游景点</a></p>
+                <p><a href="food.html">特色美食</a></p>
+                <p><a href="strategy.html">旅行指南</a></p>
+            </div>
+            <div>
+                <h4>联系我</h4>
+                <p>📍 内蒙古赤峰市松山区</p>
+                <p>📞 150-4997-6422</p>
+                <p>duaan@tju.edn.cn</p>
             </div>
         </div>
-    </main>
-    <!-- 复用首页页脚 -->
+        <div class="copyright">© 2026 魅力赤峰</div>
+    </footer>
 </body>
 </html>

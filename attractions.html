@@ -18,12 +18,91 @@
             <a href="strategy.html">旅游攻略</a>
         </div>
     </nav>
+<header class="hero-header" style="
+    position:relative;
+    height:560px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+    background:url('./images/im_jd.jpg') center/cover no-repeat;
+">
 
-    <header class="hero-header" style="background-image: url('./images/im_bg2.jpg');">
-        <h1>景点介绍</h1>
-        <p>山河壮丽 · 塞外明珠</p>
-    </header>
+    <!-- 自然纪录片风遮罩（更清透一点） -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.45) 0%,
+            rgba(0,0,0,0.25) 45%,
+            rgba(0,0,0,0.7) 100%
+        );
+        z-index:1;
+    "></div>
 
+    <!-- 空气感 / 地理感（更像航拍纪录片） -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:radial-gradient(
+            circle at center,
+            rgba(120,180,255,0.08),
+            rgba(0,0,0,0.65) 70%
+        );
+        z-index:2;
+    "></div>
+
+    <!-- 内容层 -->
+    <div style="
+        position:relative;
+        z-index:3;
+        max-width:850px;
+        padding:0 20px;
+    ">
+
+        <div style="
+            font-size:12px;
+            letter-spacing:6px;
+            opacity:0.85;
+            margin-bottom:14px;
+            color:#cfe8ff;
+        ">
+            LANDSCAPE · GEOLOGY · INNER MONGOLIA
+        </div>
+
+        <h1 style="
+            font-size:52px;
+            margin:0 0 12px;
+            font-weight:700;
+            letter-spacing:3px;
+        ">
+            景点介绍
+        </h1>
+
+        <p style="
+            font-size:17px;
+            opacity:0.92;
+            letter-spacing:2px;
+            line-height:1.8;
+        ">
+            山河壮丽 · 草原、沙漠与森林交织的自然纪录
+        </p>
+
+        <!-- 更“地理纪录片”的分隔线 -->
+        <div style="
+            width:160px;
+            height:2px;
+            background:linear-gradient(to right, transparent, rgba(255,255,255,0.75), transparent);
+            margin:26px auto 0;
+        "></div>
+
+    </div>
+
+</header>
     <main class="container">
         <div class="bento-grid">
             <div class="bento-item col-2 row-2">
@@ -56,6 +135,26 @@
             </div>
         </div>
     </main>
-    <!-- 复用首页页脚 -->
+   <footer>
+        <div class="footer-grid">
+            <div>
+                <h4 style="font-size: 22px;">赤峰印象 · CHIFENG</h4>
+                <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。 今天的赤峰，既保留着史前遗迹与草原风貌，也呈现出现代城市的发展脉络，是自然、历史与人文共同构成的复合空间。 诚邀您走进这片土地，在风与草之间，感受时间留下的回声，共赴一场跨越千年的草原之约。</p>
+            </div>
+            <div>
+                <h4>快速导航</h4>
+                <p><a href="attractions.html">必游景点</a></p>
+                <p><a href="food.html">特色美食</a></p>
+                <p><a href="strategy.html">旅行指南</a></p>
+            </div>
+            <div>
+                <h4>联系我</h4>
+                <p>📍 内蒙古赤峰市松山区</p>
+                <p>📞 150-4997-6422</p>
+                <p>duaan@tju.edn.cn</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 魅力赤峰</div>
+    </footer>
 </body>
 </html>
