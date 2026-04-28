@@ -1,308 +1,401 @@
-/* --- Chifeng Project Common Styles --- */
+/* --- Chifeng Tourism Project - Master Stylesheet --- */
+
 :root {
-    --red: #a12d1a;    /* 经典红山�?*/
-    --gold: #b2945d;   /* 历史�?*/
-    --warm-bg: #fdfdfb; /* 复古纸张�?*/
-    --dark: #1a1a1a;
-    --gray: #666;
-    --light-gray: #f4f4f4;
+    --red: #a12d1a;        /* Hongshan Red - Cultural Heritage */
+    --gold: #b2945d;       /* Golden Grasslands / Liao History */
+    --warm-bg: #fdfdfb;    /* Warm Paper-like Background */
+    --white: #ffffff;
+    --dark: #1a1a1a;       /* Primary Text */
+    --gray: #666666;       /* Secondary Text */
+    --light-gray: #f4f4f4; /* Subtle section backgrounds */
+    --shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft, consistent shadows */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-* { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-body { 
-    margin: 0; padding: 0; 
-    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", serif; 
-    background-color: var(--warm-bg); color: var(--dark);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    background-color: var(--warm-bg);
+    color: var(--dark);
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
 
-/* 导航�?*/
+/* --- Layout Containers --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --- Navigation --- */
 nav {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);
-    padding: 18px 8%; display: flex;
-    justify-content: space-between; align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
 }
-.logo { font-size: 24px; font-weight: 900; color: var(--red); letter-spacing: 3px; font-style: italic; }
-.nav-links a { margin-left: 25px; font-size: 14px; font-weight: bold; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
-.nav-links a:hover, .nav-links a.active { color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 5px; }
 
-/* 公用页面头部 */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--red);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--red);
+}
+
+/* --- Hero Headers --- */
 .hero-header {
-    height: 60vh; background-size: cover; background-position: center;
-    display: flex; flex-direction: column; justify-content: center;
-    align-items: center; color: white; text-align: center;
-    position: relative; margin-top: 0;
-}
-.hero-header::after {
-    content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); z-index: 1;
-}
-.hero-header h1 { position: relative; z-index: 2; font-size: 64px; letter-spacing: 10px; font-weight: 900; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); margin: 0; }
-.hero-header p { position: relative; z-index: 2; font-size: 20px; letter-spacing: 5px; margin-top: 15px; opacity: 0.9; }
-
-.container { max-width: 1200px; margin: 80px auto; padding: 0 40px; }
-
-/* 响应式网�?*/
-.bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.bento-item { position: relative; border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.bento-item.col-2 { grid-column: span 2; }
-.bento-item.row-2 { grid-row: span 2; }
-.bento-item img { width: 100%; height: 100%; object-fit: cover; }
-.bento-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; }
-
-/* 表格样式 */
-.data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.data-table th { background: var(--red); color: white; padding: 20px; text-align: left; }
-.data-table td { padding: 20px; border-bottom: 1px solid var(--light-gray); }
-
-/* 页脚 */
-footer { background: #111; color: #555; padding: 80px 8% 40px; margin-top: 100px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
-.footer-grid h4 { color: white; margin-bottom: 25px; letter-spacing: 2px; }
-.footer-grid p { line-height: 2; font-size: 14px; }
-.copyright { text-align: center; border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; }
-
-/* 移动�?*/
-
-/* =========================
-   🎬 作品级移动端 UI系统
-   ========================= */
-
-@media (max-width:768px){
-
-    /* ===== 全局基础 ===== */
-    body{
-        background:#fafafa;
-    }
-
-    .container{
-        padding:0 14px;
-    }
-
-    /* =========================
-       🧭 顶部导航（APP化）
-       ========================= */
-    nav{
-        position:sticky;
-        top:0;
-        z-index:999;
-        background:rgba(255,255,255,0.92);
-        backdrop-filter: blur(10px);
-        padding:12px 14px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-    }
-
-    .logo{
-        font-size:20px;
-        letter-spacing:1px;
-    }
-
-    .nav-links{
-        width:100%;
-        display:flex;
-        overflow-x:auto;
-        gap:10px;
-        padding-bottom:4px;
-        -webkit-overflow-scrolling:touch;
-    }
-
-    .nav-links a{
-        flex:0 0 auto;
-        font-size:13px;
-        padding:6px 14px;
-        background:#f3f3f3;
-        border-radius:999px;
-        white-space:nowrap;
-    }
-
-    .nav-links a.active{
-        background:rgba(180,30,30,0.12);
-        color:var(--red);
-    }
-
-    /* =========================
-       🎥 Hero（电影开场感�?
-       ========================= */
-    .hero-header h1{
-        font-size:34px !important;
-        letter-spacing:2px;
-    }
-
-    .hero-header p{
-        font-size:14px !important;
-        opacity:0.9;
-        padding:0 10px;
-    }
-
-    /* =========================
-       🧱 通用标题
-       ========================= */
-    h1,h2{
-        letter-spacing:1px;
-    }
-
-    h2{
-        font-size:22px !important;
-        margin:40px 0 20px !important;
-    }
-
-    /* =========================
-       📱 卡片系统（核心升级）
-       ========================= */
-
-    .food-list,
-    .stay-grid,
-    .history-intro{
-        grid-template-columns:1fr !important;
-        gap:16px !important;
-    }
-
-    /* 卡片统一高级�?*/
-    .food-item,
-    .stay-card,
-    .transport-card{
-        background:#fff;
-        border-radius:18px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.06);
-        padding:16px !important;
-        transition:0.3s;
-    }
-
-    /* 点击反馈（移动端体验关键�?*/
-    .food-item:active,
-    .stay-card:active,
-    .transport-card:active{
-        transform:scale(0.98);
-    }
-
-    /* 图片系统 */
-    .food-item img,
-    .stay-card img{
-        width:100% !important;
-        height:180px !important;
-        border-radius:14px;
-        object-fit:cover;
-        margin-bottom:10px;
-    }
-
-    /* =========================
-       🧾 文本系统优化
-       ========================= */
-    p{
-        line-height:1.7;
-    }
-
-    /* =========================
-       🎯 按钮系统（更像APP�?
-       ========================= */
-    a{
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .history-btn,
-    a[style*="border-radius: 50px"]{
-        width:100%;
-        display:block;
-        text-align:center;
-        padding:12px 0;
-    }
-
+    height: 60vh;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-top: 0;
 }
 
-@media (max-width:768px){
+.hero-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
 
-    /* ======================
-       ?? Footer����
-       ====================== */
-    footer{
-        padding:40px 16px 20px;
-        background:#111;
-        color:#ddd;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-header h1 {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.hero-header p {
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* --- Cards System --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--red);
+}
+
+.card-body p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.card-tag {
+    display: inline-block;
+    background: rgba(161, 45, 26, 0.1);
+    color: var(--red);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* --- Bento Grid (Special Layout) --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 20px;
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.bento-item:hover img {
+    transform: scale(1.1);
+}
+
+.bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.bento-overlay h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.bento-overlay p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.col-span-2 { grid-column: span 2; }
+.row-span-2 { grid-row: span 2; }
+
+/* --- Data Table --- */
+.table-wrapper {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th {
+    background: var(--red);
+    color: var(--white);
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 18px;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 15px;
+}
+
+tr:last-child td { border-bottom: none; }
+
+/* --- Footer --- */
+footer {
+    background: #1a1a1a;
+    color: #999;
+    padding: 80px 0 40px;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-grid h4 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.footer-grid p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 992px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .footer-grid{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:28px;
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
     }
+}
 
-    /* ======================
-       ?? ����ϵͳ
-       ====================== */
-    footer h4{
-        font-size:18px !important;
-        color:#fff;
-        margin-bottom:12px;
-        letter-spacing:1px;
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 0;
     }
-
-    /* ======================
-       ?? �ı����򣨼�ʵ�磩
-       ====================== */
-    footer p{
-        font-size:13px;
-        line-height:1.8;
-        color:#bbb;
-        margin-bottom:8px;
+    
+    .nav-links {
+        display: none; /* In a real app we'd add a toggle, but for this exercise we keep it simple or use horizontal scroll */
     }
-
-    /* ��һ�鳤�ı��Ż� */
-    footer .footer-grid > div:first-child p{
-        max-height:160px;
-        overflow:hidden;
-        position:relative;
+    
+    /* Simple mobile nav simulation */
+    .nav-links-mobile {
+        display: flex !important;
+        overflow-x: auto;
+        padding: 10px 0;
+        gap: 15px;
+        width: 100%;
+        margin-top: 10px;
     }
-
-    footer .footer-grid > div:first-child p::after{
-        content:"";
-        position:absolute;
-        bottom:0;
-        left:0;
-        right:0;
-        height:40px;
-        background:linear-gradient(to top, #111, transparent);
+    
+    .hero-header h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
     }
-
-    /* ======================
-       ?? ���ӱ俨Ƭ��ť
-       ====================== */
-    footer a{
-        display:inline-block;
-        color:#ccc;
-        text-decoration:none;
-        font-size:13px;
-        padding:6px 10px;
-        background:rgba(255,255,255,0.06);
-        border-radius:10px;
-        margin-bottom:6px;
+    
+    .hero-header p {
+        font-size: 16px;
     }
-
-    footer a:hover{
-        color:#fff;
-        background:rgba(255,255,255,0.12);
+    
+    .bento-grid {
+        display: block;
     }
-
-    /* ======================
-       ?? ��ϵ��Ϣ�Ż�
-       ====================== */
-    footer .footer-grid > div:last-child p{
-        display:flex;
-        align-items:center;
-        gap:8px;
+    
+    .bento-item {
+        margin-bottom: 20px;
+        height: 240px;
     }
-
-    /* ======================
-       ? ��Ȩ��
-       ====================== */
-    .copyright{
-        text-align:center;
-        font-size:12px;
-        margin-top:30px;
-        color:#777;
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .history-intro {
+        flex-direction: column;
     }
 }

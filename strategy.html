@@ -5,22 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>旅游攻略 - 赤峰印象 | Strategy</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .strategy-title{
+            font-size:36px;
+            border-left:7px solid var(--red);
+            padding-left:22px;
+            margin:80px 0 50px;
+            letter-spacing:2px;
+            color:#222;
+        }
+
+        /* 表格美化 */
+        .strategy-table-box{
+            background:#fff;
+            border-radius:24px;
+            overflow:hidden;
+            box-shadow:0 12px 36px rgba(0,0,0,0.06);
+            margin-bottom:80px;
+        }
+
+        .strategy-table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        .strategy-table th{
+            background:var(--red);
+            color:white;
+            padding:22px;
+            text-align:left;
+            font-size:16px;
+            font-weight:600;
+            letter-spacing:2px;
+        }
+
+        .strategy-table td{
+            padding:22px;
+            border-bottom:1px solid #f1f1f1;
+            font-size:15px;
+            color:var(--gray);
+            line-height:1.6;
+        }
+
+        .strategy-table tr:last-child td{ border:none; }
+
+        .strategy-table tr:hover td{ background:rgba(180,30,30,0.02); color:#222; }
+
+        /* 内容板块 */
+        .strategy-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:40px;
+            margin-bottom:100px;
+        }
+
+        .strategy-card{
+            background:#fff;
+            padding:45px;
+            border-top:5px solid var(--red);
+            border-radius:22px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.05);
+            transition:0.3s;
+        }
+
+        .strategy-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 18px 45px rgba(0,0,0,0.12);
+        }
+
+        .strategy-card h3{
+            font-size:24px;
+            color:var(--red);
+            margin-bottom:20px;
+        }
+
+        .strategy-card p{
+            font-size:15px;
+            color:var(--gray);
+            line-height:2;
+            margin-bottom:12px;
+        }
+
+        @media (max-width:768px){
+            .strategy-title{ font-size:28px; margin:60px 0 35px; padding-left:16px; }
+            .strategy-grid{ grid-template-columns:1fr; gap:24px; }
+            .strategy-card{ padding:35px; }
+            .strategy-table th, .strategy-table td{ padding:16px; font-size:14px; }
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="logo">赤峰印象</div>
-        <div class="nav-links">
-            <a href="index.html">首页</a>
-            <a href="attractions.html">景点介绍</a>
-            <a href="food.html">美食指南</a>
-            <a href="history.html">文化历史</a>
-            <a href="transport.html">交通住宿</a>
-            <a href="strategy.html" class="active">旅游攻略</a>
+        <div class="container nav-container">
+            <div class="logo">赤峰印象</div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="attractions.html">景点介绍</a>
+                <a href="food.html">美食指南</a>
+                <a href="history.html">文化历史</a>
+                <a href="transport.html">交通住宿</a>
+                <a href="strategy.html" class="active">旅游攻略</a>
+                <a href="school.html">母校情怀</a>
+            </div>
         </div>
     </nav>
+
 <header class="hero-header" style="
     position:relative;
-    height:620px;
+    height:560px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -30,205 +122,91 @@
     overflow:hidden;
     background:url('./images/im_ly.jpg') center/cover no-repeat;
 ">
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.8) 100%); z-index:1;"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(circle at center, rgba(140,200,255,0.08), rgba(0,0,0,0.7) 70%); z-index:2;"></div>
 
-    <!-- 遮罩不变 -->
-    <div style="
-        position:absolute;
-        inset:0;
-        background:linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.35) 0%,
-            rgba(0,0,0,0.25) 40%,
-            rgba(0,0,0,0.7) 100%
-        );
-        z-index:1;
-    "></div>
-
-    <div style="
-        position:absolute;
-        inset:0;
-        background:radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.6) 100%);
-        z-index:2;
-    "></div>
-
-    <!-- 内容层（加大间距） -->
-    <div style="position:relative; z-index:3; max-width:800px; padding:0 20px;">
-
-        <div style="
-            font-size:13px;
-            letter-spacing:5px;
-            opacity:0.85;
-            margin-bottom:16px;
-        ">
-            TRAVEL · ROAD · CHIFENG JOURNEY
-        </div>
-
-        <h1 style="
-            font-size:48px;
-            margin:0 0 14px;
-            font-weight:700;
-            letter-spacing:2px;
-        ">
-            旅游攻略
-        </h1>
-
-        <p style="
-            font-size:17px;
-            opacity:0.92;
-            letter-spacing:1px;
-            line-height:1.8;
-        ">
-            跟着路线走进草原与山河 · 一段真实的公路旅程
-        </p>
-
-        <div style="
-            width:140px;
-            height:2px;
-            background:rgba(255,255,255,0.6);
-            margin:26px auto 0;
-        "></div>
-
+    <div style="position:relative; z-index:3; max-width:850px; padding:0 20px;">
+        <div style="font-size:12px; letter-spacing:6px; opacity:0.85; margin-bottom:14px; color:#d2e5ff;">PLANNING · ROUTES · TIPS</div>
+        <h1 style="font-size:52px; margin:0 0 12px; font-weight:700; letter-spacing:3px;">旅游攻略</h1>
+        <p style="font-size:17px; opacity:0.92; letter-spacing:2px; line-height:1.8;">规划完美旅程 · 从草原到遗迹的深度引导</p>
+        <div style="width:160px; height:2px; background:linear-gradient(to right, transparent, rgba(255,255,255,0.7), transparent); margin:26px auto 0;"></div>
     </div>
-
 </header>
-    <main class="container">
-        <h2 style="text-align:center; font-size:32px; margin-bottom:50px;">赤峰 · 四季旅行表</h2>
-        <table class="data-table">
+
+   <main class="container">
+    <h2 class="strategy-title">四季景观对照</h2>
+    <div class="strategy-table-box">
+        <table class="strategy-table">
             <thead>
                 <tr>
-                    <th>时段</th>
-                    <th>景观描述</th>
-                    <th>推荐项目</th>
-                    <th>热度</th>
+                    <th>时间</th>
+                    <th>主要景观</th>
+                    <th>穿衣建议</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>4-5月</b></td>
-                    <td>嫩绿草原，百花含苞</td>
-                    <td>达里湖祭湖，鸟类摄影</td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td>春 (4-5月)</td>
+                    <td>达里湖候鸟迁徙、嫩草萌芽</td>
+                    <td>防风外套、薄毛衣</td>
                 </tr>
                 <tr>
-                    <td><b>6-8月</b></td>
-                    <td>碧草连天，最美夏日</td>
-                    <td>避暑胜地，纵马驱驰</td>
-                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>夏 (6-8月)</td>
+                    <td>最美草原绿、百花盛开、避暑圣地</td>
+                    <td>短袖、防晒衣、薄外套(早晚)</td>
                 </tr>
                 <tr>
-                    <td><b>9-10月</b></td>
-                    <td>金秋盛装，万树染金</td>
-                    <td>摄影季，克什克腾石林</td>
-                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>秋 (9-10月)</td>
+                    <td>白桦林层林尽染、摄影黄金期</td>
+                    <td>冲锋衣、抓绒衣</td>
                 </tr>
                 <tr>
-                    <td><b>11-3月</b></td>
-                    <td>冰火奇缘，雪原苍茫</td>
-                    <td>冬捕，克旗冰雪节</td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td>冬 (11-3月)</td>
+                    <td>雪地、冰捕、极寒草原体验</td>
+                    <td>加厚羽绒、保暖内衣</td>
                 </tr>
             </tbody>
         </table>
-
-<div style="margin-top:80px; background:linear-gradient(135deg, #f8fbff 0%, #ffffff 100%); padding:60px; border-radius:30px; box-shadow:0 12px 35px rgba(0,0,0,0.05); border:1px solid #dce8f5;">
-
-    <h2 style="color:#2c5c8a; font-style:italic; margin-bottom:35px; text-align:center; font-size:30px; letter-spacing:1px;">
-        自驾路况全解析
-    </h2>
-
-    <div style="line-height:2; color:#4a5568;">
-
-        <div style="padding:30px; background:#f2f8ff; border-radius:24px; border-top:6px solid #4a90e2; box-shadow:0 6px 18px rgba(0,0,0,0.03);">
-
-            <p style="font-size:18px; font-weight:bold; color:#2c5c8a; margin-bottom:20px;">
-                全程约800公里，轿车无压力：
-            </p>
-
-            <p style="margin-bottom:12px;">🚗 热阿线达达线秋季车多，建议早8点前出发</p>
-
-            <p style="margin-bottom:12px;">⚠️ 桦木沟至乌兰布统段易堵车，预留充足时间</p>
-
-            <p style="margin-bottom:12px;">🕳️ 达里湖避开泡坑烂路，找牧民带路20元搞定</p>
-
-            <p>🛣️ 经乌线部分路段较窄，会车注意安全</p>
-
-        </div>
-
     </div>
-</div>
 
-<div style="margin-top:50px; background:linear-gradient(180deg, #fffaf5 0%, #ffffff 100%); padding:60px; border-radius:30px; box-shadow:0 12px 40px rgba(0,0,0,0.06); border:1px solid #f3e5d8;">
-    
-    <h2 style="color:#b22222; font-style:italic; margin-bottom:40px; text-align:center; font-size:32px; letter-spacing:1px;">
-        三日经典路线推荐
-    </h2>
-
-    <div style="line-height:2; color:#555;">
-
-        <!-- DAY 1 -->
-        <div style="margin-bottom:35px; padding:25px; background:#fff7ef; border-radius:20px; border-left:6px solid #d94f30; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
-            <p style="font-size:20px; font-weight:bold; color:#b22222; margin-bottom:15px;">
-                DAY 1 赤峰 → 玉龙沙湖 → 林西
-            </p>
-            <p>📍布日敦：免门票！骑深度摩托进沙漠腹地，偶遇绿洲</p>
-            <p>📍玉龙沙湖：沙湖相依，骑骆驼滑沙，带娃玩一下午</p>
-            <p>🏨住林西县城｜手把肉安排</p>
+    <h2 class="strategy-title">推荐线路</h2>
+    <div class="strategy-grid">
+        <div class="strategy-card">
+            <h3>经典3日线</h3>
+            <p>D1：赤峰 - 乌兰布统(草原风光)</p>
+            <p>D2：乌兰布统 - 阿斯哈图(地质奇观)</p>
+            <p>D3：阿斯哈图 - 达里湖 - 结返</p>
         </div>
-
-        <!-- DAY 2 -->
-        <div style="margin-bottom:35px; padding:25px; background:#fffaf2; border-radius:20px; border-left:6px solid #d98c2b; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
-            <p style="font-size:20px; font-weight:bold; color:#b85c00; margin-bottom:15px;">
-                DAY 2 林西 → 热阿线 → 达达线 → 达里湖
-            </p>
-            <p>📍黄岗梁：热阿线制高点，俯瞰白桦林金黄层叠🍂</p>
-            <p>📍达达线：路边现杀现烤羊肉串，自己动手香到跺脚</p>
-            <p>🏨住达里湖蒙古包｜华子鱼必吃</p>
+        <div class="strategy-card">
+            <h3>深度5日自驾线</h3>
+            <p>在3日线基础上增加美林谷徒步、玉龙沙湖娱乐及亲王府人文体验，深度领略蒙汉交汇的魅力。</p>
         </div>
-
-        <!-- DAY 3 -->
-        <div style="margin-bottom:35px; padding:25px; background:#f7fbf7; border-radius:20px; border-left:6px solid #4f8a3c; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
-            <p style="font-size:20px; font-weight:bold; color:#2f6d2f; margin-bottom:15px;">
-                DAY 3 达里湖 → 桦木沟 → 乌兰布统
-            </p>
-            <p>📍桦木沟：金蝉湖爬栈道，俯瞰牧场如瑞士卷般层叠</p>
-            <p>📍蛤蟆坝：光影下的白桦林村落，仿佛一幅油画</p>
-            <p>🏨住乌兰布统苏木｜烤全羊提前订</p>
-        </div>
-
-        <!-- DAY 4 -->
-        <div style="padding:25px; background:#f5f9ff; border-radius:20px; border-left:6px solid #3b6ea5; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
-            <p style="font-size:20px; font-weight:bold; color:#24527a; margin-bottom:15px;">
-                DAY 4 乌兰布统 → 经乌线 → 赤峰
-            </p>
-            <p>📍小野鸭湖：清晨湖面倒映白桦林，绝美打卡</p>
-            <p>📍经乌线：金色松林一望无际，风车矗立山巅</p>
-            <p>🏨住赤峰新城区｜对夹当伴手礼</p>
-        </div>
-
     </div>
-</div>
-    </main>
-    <!-- 复用首页页脚 -->
+</main>
+
    <footer>
-        <div class="footer-grid">
-            <div>
-                <h4 style="font-size: 22px;">赤峰印象 · CHIFENG</h4>
-                <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。 今天的赤峰，既保留着史前遗迹与草原风貌，也呈现出现代城市的发展脉络，是自然、历史与人文共同构成的复合空间。 诚邀您走进这片土地，在风与草之间，感受时间留下的回声，共赴一场跨越千年的草原之约。</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-size: 22px; color: white;">赤峰印象 · CHIFENG</h4>
+                    <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <a href="attractions.html">必游景点</a>
+                    <a href="food.html">特色美食</a>
+                    <a href="strategy.html">旅行指南</a>
+                    <a href="school.html">母校情怀</a>
+                </div>
+                <div>
+                    <h4>联系我</h4>
+                    <p>📍 内蒙古赤峰市松山区</p>
+                    <p>📞 150-4997-6422</p>
+                    <p>✉️ duaan@tju.edn.cn</p>
+                </div>
             </div>
-            <div>
-                <h4>快速导航</h4>
-                <p><a href="attractions.html">必游景点</a></p>
-                <p><a href="food.html">特色美食</a></p>
-                <p><a href="strategy.html">旅行指南</a></p>
-            </div>
-            <div>
-                <h4>联系我</h4>
-                <p>📍 内蒙古赤峰市松山区</p>
-                <p>📞 150-4997-6422</p>
-                <p>duaan@tju.edn.cn</p>
-            </div>
+            <div class="copyright">© 2026 魅力赤峰</div>
         </div>
-        <div class="copyright">© 2026 魅力赤峰</div>
     </footer>
 </body>
 </html>

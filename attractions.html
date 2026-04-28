@@ -8,14 +8,17 @@
 </head>
 <body>
     <nav>
-        <div class="logo">赤峰印象</div>
-        <div class="nav-links">
-            <a href="index.html">首页</a>
-            <a href="attractions.html" class="active">景点介绍</a>
-            <a href="food.html">美食指南</a>
-            <a href="history.html">文化历史</a>
-            <a href="transport.html">交通住宿</a>
-            <a href="strategy.html">旅游攻略</a>
+        <div class="container nav-container">
+            <div class="logo">赤峰印象</div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="attractions.html" class="active">景点介绍</a>
+                <a href="food.html">美食指南</a>
+                <a href="history.html">文化历史</a>
+                <a href="transport.html">交通住宿</a>
+                <a href="strategy.html">旅游攻略</a>
+                <a href="school.html">母校情怀</a>
+            </div>
         </div>
     </nav>
 <header class="hero-header" style="
@@ -31,7 +34,7 @@
     background:url('./images/im_jd.jpg') center/cover no-repeat;
 ">
 
-    <!-- 自然纪录片风遮罩（更清透一点） -->
+    <!-- 自然纪录片风遮罩 -->
     <div style="
         position:absolute;
         inset:0;
@@ -44,7 +47,7 @@
         z-index:1;
     "></div>
 
-    <!-- 空气感 / 地理感（更像航拍纪录片） -->
+    <!-- 空气感 / 地理感 -->
     <div style="
         position:absolute;
         inset:0;
@@ -92,69 +95,72 @@
             山河壮丽 · 草原、沙漠与森林交织的自然纪录
         </p>
 
-        <!-- 更“地理纪录片”的分隔线 -->
+        <!-- 分隔线 -->
         <div style="
             width:160px;
             height:2px;
             background:linear-gradient(to right, transparent, rgba(255,255,255,0.75), transparent);
             margin:26px auto 0;
         "></div>
-
     </div>
-
 </header>
+
     <main class="container">
         <div class="bento-grid">
-            <div class="bento-item col-2 row-2">
+            <div class="bento-item col-span-2 row-span-2">
                 <img src="./images/im_wlbt.jpg" alt="乌兰布统">
-                <div class="bento-content">
+                <div class="bento-overlay">
                     <h3>乌兰布统草原</h3>
-                    <p>摄影家的朝圣地，起伏的线条与白桦林构成了最完美的草原视觉大片。也是康熙平定乱战的古战场</p>
+                    <p>摄影家的朝圣地，起伏的线条与白桦林构成了最完美的草原视觉大片。也是康熙平定乱战的古战场。</p>
                 </div>
             </div>
             <div class="bento-item">
                 <img src="./images/im_asht.jpg" alt="石林">
-                <div class="bento-content">
+                <div class="bento-overlay">
                     <h3>阿斯哈图石林</h3>
-                    <p>第四纪冰川地质奇迹</p>
+                    <p>第四纪冰川地质奇迹，石阵耸立。</p>
                 </div>
             </div>
             <div class="bento-item">
                 <img src="./images/im_dlne.jpg" alt="湖泊">
-                <div class="bento-content">
+                <div class="bento-overlay">
                     <h3>达里诺尔湖</h3>
-                    <p>“百鸟乐园”半咸水湖</p>
+                    <p>“百鸟乐园”半咸水湖，候鸟天堂。</p>
                 </div>
             </div>
-            <div class="bento-item col-2">
+            <div class="bento-item col-span-2">
                 <img src="./images/im_ylsh.jpg" alt="沙湖">
-                <div class="bento-content">
+                <div class="bento-overlay">
                     <h3>玉龙沙湖</h3>
-                    <p>一半沙漠一半湖泊的绝美景致</p>
+                    <p>一半沙漠一半湖泊的绝美镜致，大漠长河的当代注脚。</p>
                 </div>
             </div>
         </div>
     </main>
+
    <footer>
-        <div class="footer-grid">
-            <div>
-                <h4 style="font-size: 22px;">赤峰印象 · CHIFENG</h4>
-                <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。 今天的赤峰，既保留着史前遗迹与草原风貌，也呈现出现代城市的发展脉络，是自然、历史与人文共同构成的复合空间。 诚邀您走进这片土地，在风与草之间，感受时间留下的回声，共赴一场跨越千年的草原之约。</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-size: 22px; color: white;">赤峰印象 · CHIFENG</h4>
+                    <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <a href="attractions.html">必游景点</a>
+                    <a href="food.html">特色美食</a>
+                    <a href="strategy.html">旅行指南</a>
+                    <a href="school.html">母校情怀</a>
+                </div>
+                <div>
+                    <h4>联系我</h4>
+                    <p>📍 内蒙古赤峰市松山区</p>
+                    <p>📞 150-4997-6422</p>
+                    <p>✉️ duaan@tju.edu.cn</p>
+                </div>
             </div>
-            <div>
-                <h4>快速导航</h4>
-                <p><a href="attractions.html">必游景点</a></p>
-                <p><a href="food.html">特色美食</a></p>
-                <p><a href="strategy.html">旅行指南</a></p>
-            </div>
-            <div>
-                <h4>联系我</h4>
-                <p>📍 内蒙古赤峰市松山区</p>
-                <p>📞 150-4997-6422</p>
-                <p>duaan@tju.edn.cn</p>
-            </div>
+            <div class="copyright">© 2026 魅力赤峰</div>
         </div>
-        <div class="copyright">© 2026 魅力赤峰</div>
     </footer>
 </body>
 </html>

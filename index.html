@@ -5,33 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赤峰印象 - 首页 | Chifeng Impression</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 主体布局 */
+        .history-intro{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:60px;
+            align-items:center;
+            padding: 80px 0;
+        }
+
+        /* 图片区域 */
+        .history-image-box{
+            position:relative;
+        }
+
+        .history-image{
+            width:100%;
+            display:block;
+            border-radius:20px;
+            box-shadow:20px 20px 0 var(--light-gray);
+        }
+
+        /* 左上角标签 */
+        .history-tag{
+            position:absolute;
+            top:-20px;
+            left:-20px;
+            background:var(--red);
+            color:white;
+            padding:15px 30px;
+            border-radius:50px;
+            font-weight:bold;
+            font-size:14px;
+            letter-spacing:1px;
+        }
+
+        /* 标题 */
+        .history-title{
+            font-size:40px;
+            color:var(--red);
+            margin-bottom:25px;
+            font-style:italic;
+            line-height:1.4;
+        }
+
+        /* 正文 */
+        .history-text{
+            font-size:17px;
+            color:var(--gray);
+            margin-bottom:30px;
+            line-height:2;
+        }
+
+        /* 按钮 */
+        .history-btn{
+            border:2px solid var(--red);
+            color:var(--red);
+            padding:12px 35px;
+            border-radius:50px;
+            font-weight:bold;
+            font-size:14px;
+            display:inline-block;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .history-btn:hover{
+            background:var(--red);
+            color:white;
+        }
+
+        /* ========================= */
+        /* 手机端适配 */
+        /* ========================= */
+        @media (max-width: 768px){
+            .history-intro{
+                grid-template-columns: 1fr;
+                gap:40px;
+            }
+            .history-title{
+                font-size:30px;
+                margin-bottom:20px;
+            }
+            .history-text{
+                font-size:15px;
+                line-height:1.9;
+            }
+            .history-tag{
+                top:15px;
+                left:15px;
+                padding:10px 20px;
+                font-size:12px;
+                border-radius:30px;
+            }
+            .history-image{
+                box-shadow:none;
+                border-radius:18px;
+            }
+            .history-btn{
+                width:100%;
+                text-align:center;
+                padding:14px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="logo">赤峰印象</div>
-        <div class="nav-links">
-            <a href="index.html" class="active">首页</a>
-            <a href="attractions.html">景点介绍</a>
-            <a href="food.html">美食指南</a>
-            <a href="history.html">文化历史</a>
-            <a href="transport.html">交通住宿</a>
-            <a href="strategy.html">旅游攻略</a>
+        <div class="container nav-container">
+            <div class="logo">赤峰印象</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="attractions.html">景点介绍</a>
+                <a href="food.html">美食指南</a>
+                <a href="history.html">文化历史</a>
+                <a href="transport.html">交通住宿</a>
+                <a href="strategy.html">旅游攻略</a>
+                <a href="school.html">母校情怀</a>
+            </div>
         </div>
     </nav>
 
     <header class="hero-header" style="height: 100vh; background-image: url('./images/image_bg.jpg');">
-        <h1>魅力赤峰</h1>
-        <p>山海之外的塞外明珠 · 中华文明的曙光</p>
+        <div class="hero-content">
+            <h1>魅力赤峰</h1>
+            <p>塞外明珠 · 中华文明的曙光 · 八千年厚重底蕴</p>
+        </div>
     </header>
 
    <main class="container">
-
     <section class="history-intro">
-
         <!-- 图片区域 -->
         <div class="history-image-box">
             <img src="./images/im_gx.jpg" class="history-image">
-
             <div class="history-tag">
                 文明起源
             </div>
@@ -39,160 +146,77 @@
 
         <!-- 文字区域 -->
         <div class="history-content">
-
             <h2 class="history-title">
                 红山文化 · 龙的故乡
             </h2>
-
             <p class="history-text">
-                赤峰市位于内蒙古自治区东南部，地处蒙、冀、辽交界，是连接东北与华北的重要节点城市，全市面积约9万平方公里，人口400多万，是内蒙古重要的人口与区域中心城市之一。
+                赤峰市位于内蒙古自治区东南部，地处蒙古、河北、辽宁三省交界的重要地域。全市面积约9万平方公里，人口约400万，是连接东北与华北的重要节点。
 
-                赤峰自然资源丰富，草原、山地与沙地交错分布，拥有阿斯哈图石林和乌兰布统草原等著名景区。赤峰还是红山文化的重要发源地，出土“中华第一龙”等重要文物，历史文化底蕴深厚。
+                这里拥有悠久的历史底蕴，作为红山文化的核心分布区，见证了“中华第一龙”的诞生。自然资源丰富，乌兰布统草原起伏连绵，克什克腾石林壮美奇阔。
 
-                同时，这里是多民族聚居地区，以蒙古族文化为代表，融合草原游牧文化与中原文化，具有独特的地域特色与民族风情，是一座集自然风光与人文历史于一体的塞外城市。
+                赤峰不仅是地理上的交通便利、物产丰富，更是一个多元民族聚居、文化色彩绚丽的迷人之地。农耕与游牧文明在此长期交汇、融合，构成了塞外明珠特有的文明质感。
             </p>
-
             <a href="history.html" class="history-btn">
                 探索文明深度
             </a>
-
         </div>
-
     </section>
 
-</main>
-
-<style>
-/* 主体布局 */
-.history-intro{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-/* 图片区域 */
-.history-image-box{
-    position:relative;
-}
-
-.history-image{
-    width:100%;
-    display:block;
-    border-radius:20px;
-    box-shadow:20px 20px 0 var(--light-gray);
-}
-
-/* 左上角标签 */
-.history-tag{
-    position:absolute;
-    top:-20px;
-    left:-20px;
-    background:var(--red);
-    color:white;
-    padding:15px 30px;
-    border-radius:50px;
-    font-weight:bold;
-    font-size:14px;
-    letter-spacing:1px;
-}
-
-/* 标题 */
-.history-title{
-    font-size:40px;
-    color:var(--red);
-    margin-bottom:25px;
-    font-style:italic;
-    line-height:1.4;
-}
-
-/* 正文 */
-.history-text{
-    font-size:17px;
-    color:var(--gray);
-    margin-bottom:30px;
-    line-height:2;
-}
-
-/* 按钮 */
-.history-btn{
-    border:2px solid var(--red);
-    color:var(--red);
-    padding:12px 35px;
-    border-radius:50px;
-    font-weight:bold;
-    font-size:14px;
-    display:inline-block;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.history-btn:hover{
-    background:var(--red);
-    color:white;
-}
-
-/* ========================= */
-/* 手机端适配（重点） */
-/* ========================= */
-@media (max-width: 768px){
-
-    .history-intro{
-        grid-template-columns: 1fr;
-        gap:40px;
-    }
-
-    .history-title{
-        font-size:30px;
-        margin-bottom:20px;
-    }
-
-    .history-text{
-        font-size:15px;
-        line-height:1.9;
-    }
-
-    .history-tag{
-        top:15px;
-        left:15px;
-        padding:10px 20px;
-        font-size:12px;
-        border-radius:30px;
-    }
-
-    .history-image{
-        box-shadow:none;
-        border-radius:18px;
-    }
-
-    .history-btn{
-        width:100%;
-        text-align:center;
-        padding:14px 0;
-    }
-}
-</style>
-
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h4 style="font-size: 22px;">赤峰印象 · CHIFENG</h4>
-                <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。 今天的赤峰，既保留着史前遗迹与草原风貌，也呈现出现代城市的发展脉络，是自然、历史与人文共同构成的复合空间。 诚邀您走进这片土地，在风与草之间，感受时间留下的回声，共赴一场跨越千年的草原之约。</p>
+    <!-- 增加特色展示区 -->
+    <section>
+        <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px;">必游体验</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="./images/im_wlbt.jpg" alt="草原" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">自然风光</span>
+                    <h3>乌兰布统草原</h3>
+                    <p>摄影家的天堂，起伏的丘陵与白桦林构成绝美的视觉盛宴。</p>
+                </div>
             </div>
-            <div>
-                <h4>快速导航</h4>
-                <p><a href="attractions.html">必游景点</a></p>
-                <p><a href="food.html">特色美食</a></p>
-                <p><a href="strategy.html">旅行指南</a></p>
+            <div class="card">
+                <img src="./images/im_asht.jpg" alt="石林" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">地质奇观</span>
+                    <h3>阿斯哈图石林</h3>
+                    <p>第四纪冰川留下的自然奇迹，奇峰横出，形态万千。</p>
+                </div>
             </div>
-            <div>
-                <h4>联系我</h4>
-                <p>📍 内蒙古赤峰市松山区</p>
-                <p>📞 150-4997-6422</p>
-                <p>duaan@tju.edn.cn</p>
+            <div class="card">
+                <img src="./images/im_lsj.jpg" alt="遗址" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">历史遗存</span>
+                    <h3>辽上京遗址</h3>
+                    <p>契丹帝国的政治心脏，感受横跨草原的庞大帝国的历史回响。</p>
+                </div>
             </div>
         </div>
-        <div class="copyright">© 2026 魅力赤峰</div>
+    </section>
+</main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-size: 22px; color: white;">赤峰印象 · CHIFENG</h4>
+                    <p>赤峰，不只是一个地理坐标，它是一段横跨八千年的文明叙事。 从红山文化的玉龙初现，到草原帝国的兴衰更替，再到今日城市的延展与重塑，这片土地始终处在历史与现实的交汇之中。 在这里，农耕文明与游牧文明长期交融，长城既是边界，也是连接；草原既是远方，也是家园。多元文化在此沉淀、碰撞并最终融合，形成独特的塞外文明气质。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <a href="attractions.html">必游景点</a>
+                    <a href="food.html">特色美食</a>
+                    <a href="strategy.html">旅行指南</a>
+                    <a href="school.html">母校情情怀</a>
+                </div>
+                <div>
+                    <h4>联系我</h4>
+                    <p>📍 内蒙古赤峰市松山区</p>
+                    <p>📞 150-4997-6422</p>
+                    <p>✉️ duaan@tju.edu.cn</p>
+                </div>
+            </div>
+            <div class="copyright">© 2026 魅力赤峰</div>
+        </div>
     </footer>
 </body>
 </html>
