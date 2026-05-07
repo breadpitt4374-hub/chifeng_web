@@ -358,9 +358,35 @@ footer {
         padding: 10px 0;
     }
     
-    .nav-links {
-        display: none; /* In a real app we'd add a toggle, but for this exercise we keep it simple or use horizontal scroll */
+    /* 1. 让导航容器垂直排布：Logo在上，链接在下 */
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
     }
+
+    /* 2. 这里的修改是关键：取消隐藏，开启横向滚动 */
+    .nav-links {
+        display: flex;          /* 开启显示 */
+        width: 100%;           /* 满宽 */
+        overflow-x: auto;       /* 开启横向滚动条 */
+        padding: 5px 20px 10px; /* 增加边距和底部间隙 */
+        gap: 20px;              /* 链接间的间距 */
+        white-space: nowrap;    /* 强制不换行，这是滚动的关键 */
+        -webkit-overflow-scrolling: touch; /* 让手机滑动更顺滑 */
+        justify-content: flex-start; /* 靠左排列 */
+    }
+
+    /* 3. 隐藏美观起见，隐藏滚动条（可选） */
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. 减小一点字体，适配屏幕 */
+    .nav-links a {
+        font-size: 14px;
+        flex-shrink: 0;         /* 防止链接被挤压变形 */
+    }
+}
     
     /* Simple mobile nav simulation */
     .nav-links-mobile {
